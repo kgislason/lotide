@@ -28,7 +28,11 @@ console.log(assertEqual(undefined, 0));
 
 // return the first element itself
 const head = (array) => {
-  return array[0];
+  if (array !== null && array.length) {
+    return array[0];
+  } else {
+    return undefined;
+  }
 };
 
 // Test Cases for head function
@@ -36,3 +40,4 @@ console.log(assertEqual(head([5,6,7]), 5));
 console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
 console.log(assertEqual(head([]), 0));
 console.log(assertEqual(head([0]), 0));
+console.log(assertEqual(head([null, 0, 1]), 0));
