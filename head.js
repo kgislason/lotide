@@ -20,7 +20,6 @@ console.log(assertEqual("Kristy", "cheese"));
 
 // Comparing identical numbers
 console.log(assertEqual(12, 12));
-console.log(assertEqual(100, 100.02));
 
 // Comparing non-identical numbers
 console.log(assertEqual(3, 4));
