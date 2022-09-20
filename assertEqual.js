@@ -1,8 +1,8 @@
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   let result = (actual === expected) ? true : false;
-  const passMessage = "✅✅✅ Assertion Passed: " + actual + " === " + expected;
-  const failMessage = "🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected;
+  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
 
   return result ? passMessage : failMessage;
 };
