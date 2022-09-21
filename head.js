@@ -1,29 +1,29 @@
-// FUNCTION IMPLEMENTATION
+// FUNCTION IMPLEMENTATION - Assert Equal
 const assertEqual = function(actual, expected) {
-  let result = (actual === expected) ? true : false;
   const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
   const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
 
-  return result ? passMessage : failMessage;
+  console.log((actual === expected) ? passMessage : failMessage);
 };
 
 // TEST CODE
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual(1, 1);
 
 // Comparing identical strings
-console.log(assertEqual("Kristy", "Kristy"));
+assertEqual("Kristy", "Kristy");
 
 // Comparing non-identical strings
-console.log(assertEqual("Kristy", "kristy"));
-console.log(assertEqual("Kristy", "cheese"));
+assertEqual("Kristy", "kristy");
+assertEqual("Kristy", "cheese");
 
 // Comparing identical numbers
-console.log(assertEqual(12, 12));
+assertEqual(12, 12);
 
 // Comparing non-identical numbers
-console.log(assertEqual(3, 4));
-console.log(assertEqual(undefined, 0));
+assertEqual(3, 4);
+assertEqual(undefined, 0);
 
 // return the first element itself
 const head = (array) => {
@@ -35,8 +35,8 @@ const head = (array) => {
 };
 
 // Test Cases for head function
-console.log(assertEqual(head([5,6,7]), 5));
-console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
-console.log(assertEqual(head([]), 0));
-console.log(assertEqual(head([0]), 0));
-console.log(assertEqual(head([null, 0, 1]), 0));
+assertEqual(head([5,6,7]), 5);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+assertEqual(head([]), 0);
+assertEqual(head([0]), 0);
+assertEqual(head([null, 0, 1]), 0);
