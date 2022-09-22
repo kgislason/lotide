@@ -19,7 +19,7 @@ const eqArrays = (arrayOne, arrayTwo) => {
 
 const assertArraysEqual = (arrayOne, arrayTwo) => {
   assertEqual(eqArrays(arrayOne, arrayTwo), true);
-}
+};
 
 
 assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
