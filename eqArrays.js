@@ -7,7 +7,8 @@ const assertEqual = function(actual, expected) {
 };
 
 /**
- * Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
+ * Implement a function eqArrays which takes in two arrays and returns true or
+ * false, based on a perfect match.
  */
 
 const eqArrays = (arrayOne, arrayTwo) => {
