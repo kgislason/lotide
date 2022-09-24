@@ -6,38 +6,30 @@ const assertEqual = function(actual, expected) {
 };
 
 
-const countOnly = (arrayAllItems, objectItemsToCount) => {
-  let newObject = {};
+const countOnly = (allItems, itemsToCount) => {
+  let output = {};
 
-
-  // Loop through the object to count
-  for (let key in objectItemsToCount) {
-    //console.log(key);
-    // Loop through the origin array
-    for (let item of arrayAllItems) {
-    // console.log(item); 
-      // determine if the key in the object exists in the allItems array
-      // Also check if the value of th ekey is true
-      if (key === item && objectItemsToCount[key]) {
+  for (let key in itemsToCount) {
+    for (let item of allItems) {
+      // Does key in itemsToCount object exist in the allItems array?
+      // Is the value of key in itemsToCount true?
+      if (key === item && itemsToCount[key]) {
         // Count how many times the key appears in the allItems array
         let count = 1;
 
-        //console.log(key + ": " + count);
-        // If we haven't created the key yet in the new object, then let's start one
-        // console.log(newObject[key]);
-        if (!newObject[key]) {
-          newObject[key] = count;
-        } else if (newObject[key]) {
-          // If the key already exists, then lets increment the value by 1
-          newObject[key] += count++;
+        // Check if key exists
+        if (!output[key]) {
+          output[key] = count;
+        } else if (output[key]) {
+          // If key exists, increment the count by 1
+          output[key] += count++;
         }
       }
     }
   }
 
-  // return an object containing counts of everything that the input object listed.
-  console.log(newObject);
-  return newObject;
+  // return an object w/ counts of everything from input object foudn in allItems.
+  return output;
 };
 
 // Define an array
