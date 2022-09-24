@@ -14,15 +14,12 @@ const countOnly = (allItems, itemsToCount) => {
       // Does key in itemsToCount object exist in the allItems array?
       // Is the value of key in itemsToCount true?
       if (key === item && itemsToCount[key]) {
-        // Count how many times the key appears in the allItems array
-        let count = 1;
-
         // Check if key exists
         if (!output[key]) {
-          output[key] = count;
+          output[key] = 1;
         } else if (output[key]) {
           // If key exists, increment the count by 1
-          output[key] += count++;
+          output[key] += 1;
         }
       }
     }
