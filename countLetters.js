@@ -6,13 +6,10 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = (sentence) => {
-  let sentenceArray = sentence.split('');
-  console.log(sentenceArray);
   let result = {};
-  // takes in a sentence (string)
+  let sentenceArray = sentence.split('');
 
   for (let letter of sentenceArray) {
-    console.log(letter);
     if (result[letter]) {
       result[letter] += 1;
     } else {
@@ -24,4 +21,9 @@ const countLetters = (sentence) => {
   return result;
 };
 
-console.log(countLetters("lighthouse in the house"));
+const mySentence = "lighthouse in the house";
+console.log(countLetters(mySentence));
+
+// Tests
+assertEqual(countLetters(mySentence)['l'], 1);
+assertEqual(countLetters(mySentence)[' '], 3);
