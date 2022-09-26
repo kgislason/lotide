@@ -17,8 +17,10 @@ const eqArrays = (arrayOne, arrayTwo) => {
   return true;
 };
 
-const assertArraysEqual = (arrayOne, arrayTwo) => {
-  assertEqual(eqArrays(arrayOne, arrayTwo), true);
+const assertArraysEqual = (actual, expected) => {
+  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+  console.log((eqArrays(actual, expected) === true) ? passMessage : failMessage);
 };
 
 /**
