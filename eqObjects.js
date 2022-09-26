@@ -6,7 +6,7 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = (arrayOne, arrayTwo) => {
-  if (!arrayOne.length === arrayTwo.length) {
+  if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
   for (let i = 0; i < arrayOne.length; i++) {
@@ -17,76 +17,77 @@ const eqArrays = (arrayOne, arrayTwo) => {
   return true;
 };
 
-const assertArraysEqual = (arrayOne, arrayTwo) => {
-  assertEqual(eqArrays(arrayOne, arrayTwo), true);
-};
-
+// Check if 2 objects are the same: same number of keys, same key values, same  arrays foudn within key values
 const eqObjects = (object1, object2) => {
-  //create two arrays of the object keys
-  let objectKey1 = [];
-  let objectKey2 = [];
+  // create two arrays of the object keys
+  let objectKey1 = Object.keys(object1);
+  let objectKey2 = Object.keys(object2);
 
-  for (let key1 in object1) {
-    objectKey1.push(key1);
+  // If there are different number of keys in objects, return false
+  if (objectKey1.length !== objectKey2.length) {
+    return false;
   }
 
-  for (let key2 in object2) {
-    objectKey2.push(key2);
+  // Next, compare values in each key
+  for (let key of objectKey1) {
+    // Check for arrays as values
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+      // If eqArray() returns false, then return false
+      if (! eqArrays(object1[key], object2[key])) {
+        return false;
+      }
+    } else if (object1[key] !== object2[key]) {
+      // compare primitive data types
+      return false;
+    }
   }
-
-  // If there are different number of keys in the objects, then return false
-  // if (objectKey1.length !== objectKey2.length) {
-  //   console.log("Object lengths are not equal");
-  //   return false;
-  // }
-
-  // // Compare values
-  // for (let key of objectKey1) {
-  //   if (object1[key] !== object2[key]) {
-  //     console.log(object1[key] + " !== " + object2[key]);
-  //     return false;
-  //   }
-  // }
-
-  eqArrays(objectKey1, objectKey2);
-
   return true;
-
 };
 
 
-// Test
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
+// Tests
+// const ab = { a: "1", b: {} };
+// const ba = { b: "2", a: "1" };
+// console.log(eqObjects(ab, ba)); // => true
 
-const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
+// const abc = { a: "1", b: "2", c: "3" };
+// console.log(eqObjects(ab, abc)); // => false
 
-const human = {
-  name: "Jane Smith",
-  age: 50,
-  city: "Victoria"
-};
+// const human = {
+//   name: "Jane Smith",
+//   age: 50,
+//   city: "Victoria"
+// };
 
-const animal = {
-  name: "Nibbles",
-  age: 2,
-  city: "Victoria"
-};
+// const animal = {
+//   name: "Nibbles",
+//   age: 2,
+//   city: "Victoria"
+// };
 
-console.log(eqObjects(human, animal)); // => false
+// console.log(assertEqual(human["name"], animal["name"])); // => false
+// console.log(eqObjects(human, animal)); // => false
 
-const example1 = {
-  sample: "a",
-  test: true,
-  result: "pass",
-};
+// const example1 = {
+//   sample: "a",
+//   test: true,
+//   result: "pass",
+// };
 
-const example2 = {
-  test: true,
-  result: "pass",
-  sample: "a",
-};
+// const example2 = {
+//   test: true,
+//   result: "pass",
+//   sample: "a",
+// };
 
-console.log(eqObjects(example1, example2)); // => true
+// console.log(eqObjects(example1, example2)); // => true
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+console.log(eqObjects(cd, dc)); // => true
+
+const cd2 = { c: "1", d: ["2", 3, 4] };
+console.log(eqObjects(cd, cd2)); // => false
+console.log(eqArrays(cd["d"], cd2["d"])); // => false
+console.log(assertEqual(cd["d"].join(), dc["d"].join() ));
+console.log(assertEqual(cd["d"].join(), cd2["d"].join() ));
