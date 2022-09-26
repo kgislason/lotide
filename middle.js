@@ -23,7 +23,7 @@ const assertArraysEqual = (arrayOne, arrayTwo) => {
 
 const middle = (array) => {
   // Round down to whole number; index starts at 0 so substract 1
-  let middleCalc = Math.round(array.length / 2) - 1; 
+  let middleCalc = Math.round(array.length / 2) - 1;
 
   if (!Array.isArray(array) || array.length === 0) {
     return;
@@ -61,16 +61,16 @@ console.log(middle([1, 2, 3, 4, 5, 6, 7])); // expected [4]
 console.log(middle([1, 2, 3, 4, 5, 6, 7, 8, 9])); // expected [5]
 console.log("\n");
 // For arrays with one or two elements, there is no middle. Return an empty array.
-middle([1]) // => []
-middle([1, 2]) // => []
+middle([1]); // => []
+middle([1, 2]); // => []
 
 // For arrays with odd number of elements, an array containing a single middle element should be returned.
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
+middle([1, 2, 3]); // => [2]
+middle([1, 2, 3, 4, 5]); // => [3]
 
 // For arrays with an even number of elements, an array containing the two elements in the middle should be returned
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+middle([1, 2, 3, 4]); // => [2, 3]
+middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
 
 // Test assertions for the various scenarios with middle
 // Even array should return 2 items
