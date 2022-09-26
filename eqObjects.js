@@ -35,18 +35,20 @@ const eqObjects = (object1, object2) => {
   }
 
   // If there are different number of keys in the objects, then return false
-  if (objectKey1.length !== objectKey2.length) {
-    console.log("Object lengths are not equal");
-    return false;
-  }
+  // if (objectKey1.length !== objectKey2.length) {
+  //   console.log("Object lengths are not equal");
+  //   return false;
+  // }
 
-  // Compare values
-  for (let key of objectKey1) {
-    if (object1[key] !== object2[key]) {
-      console.log(object1[key] + " !== " + object2[key]);
-      return false;
-    }
-  }
+  // // Compare values
+  // for (let key of objectKey1) {
+  //   if (object1[key] !== object2[key]) {
+  //     console.log(object1[key] + " !== " + object2[key]);
+  //     return false;
+  //   }
+  // }
+
+  eqArrays(objectKey1, objectKey2);
 
   return true;
 
