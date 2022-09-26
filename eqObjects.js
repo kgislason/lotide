@@ -22,7 +22,7 @@ const assertArraysEqual = (arrayOne, arrayTwo) => {
 };
 
 const eqObjects = (object1, object2) => {
-  // create two arrays of the object keys
+  //create two arrays of the object keys
   let objectKey1 = [];
   let objectKey2 = [];
 
@@ -34,18 +34,16 @@ const eqObjects = (object1, object2) => {
     objectKey2.push(key2);
   }
 
-  // console.log(objectKey1);
-  // console.log(objectKey2);
-
   // If there are different number of keys in the objects, then return false
   if (objectKey1.length !== objectKey2.length) {
+    console.log("Object lengths are not equal");
     return false;
   }
 
   // Compare values
   for (let key of objectKey1) {
     if (object1[key] !== object2[key]) {
-      console.log(object1[key] + "!==" + object2[key]);
+      console.log(object1[key] + " !== " + object2[key]);
       return false;
     }
   }
@@ -62,3 +60,31 @@ console.log(eqObjects(ab, ba)); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
 console.log(eqObjects(ab, abc)); // => false
+
+const human = {
+  name: "Jane Smith",
+  age: 50,
+  city: "Victoria"
+};
+
+const animal = {
+  name: "Nibbles",
+  age: 2,
+  city: "Victoria"
+};
+
+console.log(eqObjects(human, animal)); // => false
+
+const example1 = {
+  sample: "a",
+  test: true,
+  result: "pass",
+};
+
+const example2 = {
+  test: true,
+  result: "pass",
+  sample: "a",
+};
+
+console.log(eqObjects(example1, example2)); // => true
