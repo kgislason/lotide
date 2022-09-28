@@ -47,6 +47,7 @@ console.log(letterPositions(exampleString)["l"]);
 console.log(letterPositions(exampleString2)["l"]);
 
 // Test
+assertEqual(letterPositions(exampleString)["l"].length, [0].length);
 assertArraysEqual(letterPositions(exampleString)["l"], [0]);
 assertArraysEqual(letterPositions(exampleString2)["l"], [2]);
 
