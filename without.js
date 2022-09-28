@@ -34,25 +34,38 @@ const assertArraysEqual = (actual, expected) => {
  */
 
 const without = (source, itemsToRemove) => {
-  let newArray = [];
-  
-  for (let i = 0; i < source.length; i += itemsToRemove.length) {
-    for (let item of itemsToRemove) {
-      if (source[i] !== item) {
-        newArray.push(source[i]);
-      }
-    }
+  let newArray = source;
+
+  // Verify we are working with array
+  if (!Array.isArray(source) || !Array.isArray(itemsToRemove)) {
+    return;
   }
-  console.log(newArray);
+
+  // Loop through itemsToRemove array
+  for (const ri of itemsToRemove) {
+    // modify the newArray by filtering out items to remove (ri = remove item)
+    newArray = newArray.filter(element => element !== ri);
+  }
+
   return newArray;
+
 };
 
-// Test Cases
-without([1, 2, 3], [1]); // => [2, 3]
-//without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
-
-// Ensure the original array is not being overwritten
+// Test Data
+const array1 = ["1", "2", "3"];
+const array2 = [1, 2, 3, 1, 2, 3, 1, 2, 3];
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
+
+// Test Cases
+
+// Does it work when there are multiple values that are the same
+console.log(without(array2, [1, 2])); // => [2, 3]
+assertEqual(without(array2, [1, 2]).length, [3, 3, 3].length);
+assertArraysEqual(without(array1, [1, 2, "3"]), ["1", "2"]); // => ["1", "2"]
+
 // Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(array1, ["1", "2", "3"]); // PAss
+assertArraysEqual(without(array1, ["1", "2"]), ["3"]); // PASS
+assertArraysEqual(without(array1, ["1", "2"]), ["1", "3"]); // FAIL
+assertArraysEqual(words, ["hello", "world", "lighthouse"]); // PASS
+assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]); // PASS
