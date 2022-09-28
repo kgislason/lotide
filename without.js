@@ -36,7 +36,7 @@ const assertArraysEqual = (actual, expected) => {
 const without = (source, itemsToRemove) => {
   let newArray = source;
 
-  // Verify we are working with array
+  // Verify we are working with arrays
   if (!Array.isArray(source) || !Array.isArray(itemsToRemove)) {
     return;
   }
@@ -44,6 +44,7 @@ const without = (source, itemsToRemove) => {
   // Loop through itemsToRemove array
   for (const ri of itemsToRemove) {
     // modify the newArray by filtering out items to remove (ri = remove item)
+    // Each loop should build on the a new array that as prev been filtered
     newArray = newArray.filter(element => element !== ri);
   }
 
