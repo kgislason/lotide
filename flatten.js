@@ -29,7 +29,7 @@ const flatten = function(myArray) {
   const newArray = [];
 
   // Check if argument is actually an array
-  if(!Array.isArray(myArray)) {
+  if (!Array.isArray(myArray)) {
     return;
   }
 
