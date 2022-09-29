@@ -12,7 +12,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // Define Tail Function that returns an array minus the first element at index 0
-const tail = (array) => {
+const tail = function(array) {
   if (!Array.isArray(array) || !array.length) {
     return;
   }

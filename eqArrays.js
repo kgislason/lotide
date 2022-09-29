@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
  * false, based on a perfect match.
  */
 
-const eqArrays = (arrayOne, arrayTwo) => {
+const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }

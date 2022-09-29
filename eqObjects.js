@@ -5,7 +5,7 @@ const assertEqual = function(actual, expected) {
   console.log((actual === expected) ? passMessage : failMessage);
 };
 
-const eqArrays = (arrayOne, arrayTwo) => {
+const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
@@ -18,7 +18,7 @@ const eqArrays = (arrayOne, arrayTwo) => {
 };
 
 // Check if 2 objects are the same: same number of keys, same key values, same  arrays foudn within key values
-const eqObjects = (object1, object2) => {
+const eqObjects = function(object1, object2) {
   // create two arrays of the object keys
   let objectKey1 = Object.keys(object1);
   let objectKey2 = Object.keys(object2);

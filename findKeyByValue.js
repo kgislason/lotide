@@ -6,7 +6,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // takes in an object and a value.
-const findKeyByValue = (object, value) => {
+const findKeyByValue = function(object, value) {
   // scan the object
   for (let key in object) {
     // return the first key which contains the given value.

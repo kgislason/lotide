@@ -6,7 +6,7 @@ const assertEqual = function(actual, expected) {
 };
 
 
-const countOnly = (allItems, itemsToCount) => {
+const countOnly = function(allItems, itemsToCount) {
   let output = {};
 
   for (let key in itemsToCount) {

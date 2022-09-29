@@ -5,7 +5,7 @@ const assertEqual = function(actual, expected) {
   console.log((actual === expected) ? passMessage : failMessage);
 };
 
-const countLetters = (sentence) => {
+const countLetters = function(sentence) {
   let result = {};
   let sentenceArray = sentence.split('');
 

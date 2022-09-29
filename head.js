@@ -26,7 +26,7 @@ assertEqual(3, 4);
 assertEqual(undefined, 0);
 
 // return the first element itself
-const head = (array) => {
+const head = function(array) {
   if (array !== null && array.length) {
     return array[0];
   } else {
