@@ -1,15 +1,16 @@
+const assertEqual = require('./assertEqual');
+
 /**
  * Tail Function
  * Description: every element except the head (first element) of the array.
  */
 
-// FUNCTION IMPLEMENTATION - Assert Equal
-const assertEqual = function(actual, expected) {
-  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+// const assertEqual = function(actual, expected) {
+//   const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+//   const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
 
-  console.log((actual === expected) ? passMessage : failMessage);
-};
+//   console.log((actual === expected) ? passMessage : failMessage);
+// };
 
 // Define Tail Function that returns an array minus the first element at index 0
 const tail = function(array) {

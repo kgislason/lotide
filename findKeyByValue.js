@@ -1,9 +1,11 @@
-const assertEqual = function(actual, expected) {
-  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+const assertEqual = require('./assertEqual');
 
-  console.log((actual === expected) ? passMessage : failMessage);
-};
+// const assertEqual = function(actual, expected) {
+//   const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+//   const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+
+//   console.log((actual === expected) ? passMessage : failMessage);
+// };
 
 // takes in an object and a value.
 const findKeyByValue = function(object, value) {

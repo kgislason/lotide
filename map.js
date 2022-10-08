@@ -1,21 +1,4 @@
-
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-  console.log((eqArrays(actual, expected) === true) ? passMessage : failMessage);
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 const words = ["ground", "control", "to", "major", "tom"];
 const animals = [

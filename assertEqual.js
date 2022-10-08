@@ -24,3 +24,5 @@ assertEqual(100, 100.02);
 // Comparing non-identical numbers
 assertEqual(3, 4);
 assertEqual(undefined, 0);
+
+module.exports = assertEqual;

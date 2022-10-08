@@ -1,26 +1,10 @@
+const assertArraysEqual = require('./assertArraysEqual');
+
 /**
  * Function: tankeUntil
  *
  * Returns a slice of the array with elements taken from the beginning
  */
-
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-  console.log((eqArrays(actual, expected) === true) ? passMessage : failMessage);
-};
 
 // take in two parameters:
 // 1. array to work with
@@ -32,7 +16,6 @@ const takeUntil = function(array, callback) {
 };
 
 // Test Data
-const exmArray = [];
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 

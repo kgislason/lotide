@@ -1,14 +1,16 @@
+const assertEqual = require('./assertEqual');
+
 /**
  * Function: findKey
  *
  */
 
-const assertEqual = function(actual, expected) {
-  const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-  const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+// const assertEqual = function(actual, expected) {
+//   const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+//   const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
 
-  console.log((actual === expected) ? passMessage : failMessage);
-};
+//   console.log((actual === expected) ? passMessage : failMessage);
+// };
 
 // Arguments:
 // - object
