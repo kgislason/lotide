@@ -5,10 +5,10 @@ const eqObjects = require('../eqObjects');
 // Tests with Primitive Data Types
 const ab = { a: "1", b: {} };
 const ba = { b: "2", a: "1" };
-// console.log(eqObjects(ab, ba)); // => true
+console.log(eqObjects(ab, ba)); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-// console.log(eqObjects(ab, abc)); // => false
+console.log(eqObjects(ab, abc)); // => false
 
 const human = {
   name: "Jane Smith",
@@ -22,8 +22,8 @@ const animal = {
   city: "Victoria"
 };
 
-// console.log(assertEqual(human["name"], animal["name"])); // => false
-// console.log(eqObjects(human, animal)); // => false
+console.log(assertEqual(human["name"], animal["name"])); // => false
+console.log(eqObjects(human, animal)); // => false
 
 const example1 = {
   sample: "a",
@@ -37,7 +37,7 @@ const example2 = {
   sample: "a",
 };
 
-//console.log(eqObjects(example1, example2)); // => true
+console.log(eqObjects(example1, example2)); // => true
 
 // Test Cases with Arrays
 const cd = { c: "1", d: ["2", 3] };

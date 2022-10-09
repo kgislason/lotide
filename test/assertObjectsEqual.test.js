@@ -1,6 +1,3 @@
-const assertEqual = require('../assertEqual');
-const eqArrays = require('../eqArrays');
-const eqObjects = require('../eqObjects');
 const assertObjectsEqual = require('../assertObjectsEqual');
 
 const object1 = {
