@@ -1,12 +1,5 @@
 const assertEqual = require('./assertEqual');
 
-// const assertEqual = function(actual, expected) {
-//   const passMessage = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-//   const failMessage = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-
-//   console.log((actual === expected) ? passMessage : failMessage);
-// };
-
 const countLetters = function(sentence) {
   let result = {};
   let sentenceArray = sentence.split('');
