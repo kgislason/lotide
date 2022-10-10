@@ -3,8 +3,16 @@ const eqArrays = function(arrayOne, arrayTwo) {
     return false;
   }
   for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
+    if (Array.isArray(arrayOne[i]) && Array.isArray(arrayTwo[i])) {
+      eqArrays(arrayOne[i], arrayTwo[i]);
+    } else if (Array.isArray(arrayOne[i]) && !Array.isArray(arrayTwo[i])) {
       return false;
+    } else if (!Array.isArray(arrayOne[i]) && Array.isArray(arrayTwo[i])) {
+      return false;
+    } else {
+      if (arrayOne[i] !== arrayTwo[i]) {
+        return false;
+      }
     }
   }
   return true;
