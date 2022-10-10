@@ -1,6 +1,3 @@
-const assertEqual = require('./assertEqual');
-const assertArraysEqual = require('./assertArraysEqual');
-
 const flatten = function(myArray) {
   // let newArray = array.flat(Infinity);
   // return newArray;
@@ -24,15 +21,4 @@ const flatten = function(myArray) {
   return newArray;
 };
 
-// Test Data
-const array1 = [1, 2, [3, 4], 5, [6]];
-const array2 = [1, 2, [3, 4], [5], [6]];
-const arrayFlat = [1, 2, 3, 4, 5, 6];
-
-// Test Cases
-console.log(flatten(array1)); // => [1, 2, 3, 4, 5, 6]
-assertEqual(flatten(array1.length, arrayFlat)); // =>  Should pass
-assertArraysEqual(flatten(array1), arrayFlat);
-console.log("----");
-console.log(flatten(array2));
-assertArraysEqual(flatten(array2), arrayFlat);
+module.exports = flatten;
