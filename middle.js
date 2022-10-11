@@ -8,7 +8,7 @@ const middle = function(array) {
   // Round down to whole number; index starts at 0 so substract 1
   let middleCalc = Math.round(array.length / 2) - 1;
 
-  if (!Array.isArray(array) || array.length === 0) {
+  if (!Array.isArray(array)) {
     return;
   } else if (array.length < 3) {
     return [];
