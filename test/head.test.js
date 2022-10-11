@@ -1,29 +1,29 @@
-const assertEqual = require('../assertEqual');
-const head = require('../head');
+//const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
+const head   = require('../head');
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
+describe("#head", () => {
+  it("returns 1 for [1, 2, 3]", () => {
+    assert.strictEqual(head([1, 2, 3]), 1);
+  });
 
-// Comparing identical strings
-assertEqual("Kristy", "Kristy");
+  it("should return '5' got ['5']", () => {
+    assert.strictEqual(head(['5']), '5');
+  });
 
-// Comparing non-identical strings
-assertEqual("Kristy", "kristy");
-assertEqual("Kristy", "cheese");
+  it('should return "Hello" got ["Hello", "Lighthouse", "Labs"]', () => {
+    assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+  });
 
-// Comparing identical numbers
-assertEqual(12, 12);
+  it("should return undefined for empty array []: An empty array should yield undefined as its head", () => {
+    assert.strictEqual(head([]), undefined);
+  });
 
-// Comparing non-identical numbers
-assertEqual(3, 4);
-assertEqual(undefined, 0);
+  it("should return 0 for [0]: An array with only one element should still yield that one element as its head", () => {
+    assert.strictEqual(head([0]), 0);
+  });
 
-
-// Test Cases for head function
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([]), 0);
-assertEqual(head([0]), 0);
-assertEqual(head([null, 0, 1]), 0);
+  it("should return null for [null, 0, 1]),", () => {
+    assert.strictEqual(head([null, 0, 1]), null);
+  });
+});

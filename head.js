@@ -1,3 +1,10 @@
+/**
+ * 
+ * Head - head()
+ * 
+ * Taks an array and returns the first element in the array 
+ *
+ */
 // return the first element itself
 const head = function(array) {
   if (array !== null && array.length) {
