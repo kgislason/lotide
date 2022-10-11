@@ -5,8 +5,12 @@
 
 // Define Tail Function that returns an array minus the first element at index 0
 const tail = function(array) {
-  if (!Array.isArray(array) || array.length <= 1) {
+  if (!Array.isArray(array)) {
     return;
+  } 
+  
+  if (array.length <= 1) {
+    return [];
   }
 
   return array.slice(1);

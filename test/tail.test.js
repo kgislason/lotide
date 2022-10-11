@@ -1,9 +1,20 @@
-const assertEqual = require('../assertEqual');
+const { expect } = require('chai');
 const tail = require('../tail');
 
-// Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
-assertEqual(tail([].length), undefined); // Empty array
-assertEqual(tail([0].length), undefined);
+describe("#tail", () => {
+  const words = ["Yo Yo", "Lighthouse", "Labs"];
+  const result = ["Lighthouse", "Labs"];
+
+  it('Should return ["Lighthouse", "Labs"] for ["Yo Yo", "Lighthouse", "Labs"]', () => {
+    expect(tail(words)).to.deep.equal(result);
+  });
+
+  it("Empty array [] should return an empty  []", () => {
+    expect(tail([])).to.deep.equal([]);
+  });
+
+  it('Array with only 1 element ["hello"] should return an empty array [] for its tail', () => {
+    expect(tail(["hello"])).to.deep.equal([]);
+  });
+
+});
