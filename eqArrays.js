@@ -1,4 +1,7 @@
 const eqArrays = function(arrayOne, arrayTwo) {
+  if (!Array.isArray(arrayOne) || !Array.isArray(arrayTwo)) {
+    return;
+  }
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
