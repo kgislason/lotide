@@ -1,3 +1,9 @@
+/**
+ * middle.js
+ * 
+ * Description: takes in an array and returns middle most element of the array.
+ */
+
 const middle = function(array) {
   // Round down to whole number; index starts at 0 so substract 1
   let middleCalc = Math.round(array.length / 2) - 1;
