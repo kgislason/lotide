@@ -1,4 +1,3 @@
-//const assertEqual = require('../assertEqual');
 const assert = require('chai').assert;
 const findKeyByValue = require('../findKeyByValue');
 
@@ -9,7 +8,6 @@ describe("#findKeyByValue", () => {
     drama:  "The Wire"
   };
 
-  // assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
   it('should return key drama for value The Wire', () => {
     const actual = findKeyByValue(bestTVShowsByGenre, "The Wire");
     const expected = "drama";

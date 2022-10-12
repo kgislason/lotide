@@ -1,4 +1,3 @@
-//const assertEqual = require('../assertEqual');
 const assert = require('chai').assert;
 const countOnly = require('../countOnly');
 

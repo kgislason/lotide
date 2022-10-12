@@ -8,14 +8,12 @@ describe("#flatten", () => {
   const array2 = [1, 2, [3, 4], [5], [6]];
   const arrayFlat = [1, 2, 3, 4, 5, 6];
 
-  // assertEqual(flatten(array1).length, arrayFlat.length); // =>  Should pass
   it('should return 6 as the length of the flattened array of [1, 2, [3, 4], 5, [6]]', () => {
     const actual = flatten(array1).length;
     const expected = arrayFlat.length;
     assert.strictEqual(actual, expected);
   });
   
-  // assertArraysEqual(flatten(array1), arrayFlat);
   it(`should return ${array1} for ${arrayFlat}`, () => {
     const actual = flatten(array1);
     const expected = arrayFlat;
@@ -45,6 +43,4 @@ describe("#flatten", () => {
     const expected = undefined;
     assert.strictEqual(actual, expected);
   });
-
-  
 });

@@ -1,3 +1,7 @@
+/**
+ * Flatten
+ *
+ */
 const flatten = function(myArray) {
   // let newArray = array.flat(Infinity);
   // return newArray;

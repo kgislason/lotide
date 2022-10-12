@@ -12,19 +12,19 @@ describe("#findKey", () => {
     "Akelarre":  { stars: 3 }
   };
 
-  it('should return key drama for value The Wire', () => {
+  it('should return noma for stars equal to 2', () => {
     const actual = findKey(testObject, x => x.stars === 2);
     const expected = "noma";
     assert.strictEqual(actual, expected);
   });
 
-  it('should return undefined for a value that does not exist', () => {
+  it('should return Blue Hill for stars greater than 3', () => {
     const actual = findKey(testObject, x => x.stars < 3);
     const expected = "Blue Hill";
     assert.strictEqual(actual, expected);
   });
   
-  it('should return undefined if no arguments are passed to function', () => {
+  it('should return undefined if case is not found: stars equal to 4', () => {
     const actual = findKey(testObject, x => x.stars === 4);
     const expected = undefined;
     assert.strictEqual(actual, expected);
