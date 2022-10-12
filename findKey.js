@@ -1,7 +1,7 @@
 /**
  * findKey()
  *
- * Description: a function that takes in an object and callback and returns the first key that meets the criteria specified in callback
+ * Description: takes in an object and callback and returns the first key that meets the criteria specified in callback
  *
  * @since 1.0.0
  * @param {object} object The object to look through

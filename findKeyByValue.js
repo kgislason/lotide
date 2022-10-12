@@ -1,7 +1,7 @@
 /**
  * findKeyByValue()
  *
- * Description: a function that takes in an object and a value and returns the first key that corresponds to that value.
+ * Description: takes in an object and a value and returns the first key that corresponds to that value.
  *
  * @since 1.0.0
  * @param {object} object - source object
