@@ -8,12 +8,16 @@
  *
  */
 
-const without = function(source, itemsToRemove) {
+const without = function(source, itemsToRemove = []) {
   let newArray = source;
 
   // Verify we are working with arrays
   if (!Array.isArray(source) || !Array.isArray(itemsToRemove)) {
     return;
+  }
+
+  if (source.length === 0) {
+    return [];
   }
 
   // Loop through itemsToRemove array
