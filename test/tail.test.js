@@ -8,13 +8,13 @@ describe("#tail", () => {
     assert.deepEqual(actual, expected);
   });
 
-  it("Empty array [] should return an empty  []", () => {
+  it("Should return an empty array [] for empty array []", () => {
     const actual = tail([]);
     const expected = [];
     assert.deepEqual(actual, expected);
   });
 
-  it('Array with only 1 element ["hello"] should return an empty array [] for its tail', () => {
+  it('Should return an empty array [] for array with only 1 element ["hello"] ', () => {
     const actual = tail(["hello"]);
     const expected = [];
     assert.deepEqual(actual, expected);

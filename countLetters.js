@@ -16,6 +16,5 @@ const countLetters = function(sentence) {
   //return a count of each of the letters in that sentence.
   return result;
 };
-const mySentence = "lighthouse in the house";
-console.log(countLetters(mySentence));
+
 module.exports = countLetters;

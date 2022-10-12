@@ -8,25 +8,25 @@ describe("#without", () => {
     assert.deepEqual(actual, expected);
   });
 
-  it("Empty array [] should return an empty  []", () => {
+  it("Should return an empty array [] for empty array []", () => {
     const actual = without([], []);
     const expected = [];
     assert.deepEqual(actual, expected);
   });
 
-  it('Array with only 1 element ["hello"] should return an empty array [] for its without', () => {
+  it('Should return an empty array [] for array with only 1 element ["hello"]', () => {
     const actual = without(["hello"], ["hello"]);
     const expected = [];
     assert.deepEqual(actual, expected);
   });
 
-  it('should return undefined if not an array', () => {
+  it('Should return undefined if not an array', () => {
     const actual = without("hello", "h");
     const expected = undefined;
     assert.strictEqual(actual, expected);
   });
 
-  it('should return empty array when entire array is filtered out', () => {
+  it('Should return empty array when entire array is filtered out', () => {
     const actual = without(["hello", "world", "lighthouse"], ["hello", "world", "lighthouse"]);
     const expected = [];
     assert.deepEqual(actual, expected);

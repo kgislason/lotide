@@ -3,13 +3,13 @@ const eqArrays = require('../eqArrays');
 
 describe("#eqArrays", () => {
 
-  it('should return true for 2 equal arrays of numbers [1, 2, 3] === [1, 2, 3]', () => {
+  it('Should return true for 2 equal arrays of numbers [1, 2, 3] === [1, 2, 3]', () => {
     const actual = eqArrays([1, 2, 3], [1, 2, 3]);
     const expected = true;
     assert.strictEqual(actual, expected);
   });
 
-  it('should return undefined if another type is entered that is not an array', () => {
+  it('Should return undefined if another type is entered that is not an array', () => {
     const actual = eqArrays(1, 1);
     const expected = undefined;
     assert.strictEqual(actual, expected);

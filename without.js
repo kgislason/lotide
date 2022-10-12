@@ -1,11 +1,10 @@
 /**
- * Function: without
+ * without.js
  *
- * Description: returns a new array with only those elements from `source` that are not present in the `itemsToRemove` array.
- *
- * - `source` is an array
- * - `itemsToRemove is an array
- *
+ * @category Function
+ * @param {array} source array
+ * @param {array} itemsToRemove array
+ * @returns {array} Returns array with only those elements from `source` array that are not present in the `itemsToRemove` array.
  */
 
 const without = function(source, itemsToRemove = []) {
@@ -16,19 +15,17 @@ const without = function(source, itemsToRemove = []) {
     return;
   }
 
+  // return empty array if source array is empty
   if (source.length === 0) {
     return [];
   }
 
-  // Loop through itemsToRemove array
-  for (const ri of itemsToRemove) {
-    // modify the newArray by filtering out items to remove (ri = remove item)
-    // Each loop should build on the a new array that as prev been filtered
-    newArray = newArray.filter(element => element !== ri);
+  // Loop through itemsToRemove array and filter out items to remove
+  for (const i2r of itemsToRemove) {
+    newArray = newArray.filter(element => element !== i2r);
   }
 
   return newArray;
-
 };
 
 module.exports = without;

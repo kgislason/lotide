@@ -34,6 +34,4 @@ const countOnly = function(allItems, itemsToCount) {
   return output;
 };
 
-console.log(countOnly([1, 2, 3], {1: true}));
-
 module.exports = countOnly;

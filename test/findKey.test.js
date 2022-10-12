@@ -12,25 +12,25 @@ describe("#findKey", () => {
     "Akelarre":  { stars: 3 }
   };
 
-  it('should return noma for stars equal to 2', () => {
+  it('Should return noma for stars equal to 2', () => {
     const actual = findKey(testObject, x => x.stars === 2);
     const expected = "noma";
     assert.strictEqual(actual, expected);
   });
 
-  it('should return Blue Hill for stars greater than 3', () => {
+  it('Should return Blue Hill for stars greater than 3', () => {
     const actual = findKey(testObject, x => x.stars < 3);
     const expected = "Blue Hill";
     assert.strictEqual(actual, expected);
   });
   
-  it('should return undefined if case is not found: stars equal to 4', () => {
+  it('Should return undefined if case is not found: stars equal to 4', () => {
     const actual = findKey(testObject, x => x.stars === 4);
     const expected = undefined;
     assert.strictEqual(actual, expected);
   });
 
-  it('should return undefined if no arguments are passed to function', () => {
+  it('Should return undefined if no arguments are passed to function', () => {
     const actual = findKey();
     const expected = undefined;
     assert.strictEqual(actual, expected);

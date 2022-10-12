@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const letterPositions = require('../letterPositions');
 
 describe("#letterPositions", () => {
-  it('should return an object with each letter as key and array of positions l: [0]...', () => {
+  it('Should return an object with each letter as key and array of positions l: [0]...', () => {
     const actual = letterPositions("Lighthouse in the house");
     const expected = {
       L: [0],

@@ -13,5 +13,9 @@ const object3 = {
   city: "Victoria",
 };
 
+console.log("\n#assertObjectsEqual");
+console.log("Should print passed for 2 equal objects:")
 assertObjectsEqual(object1, object2); // => true
+console.log("Should print failed for 2 inequal objects:")
 assertObjectsEqual(object1, object3); // => false
+console.log("END assertObjectsEqual\n");

@@ -8,19 +8,19 @@ describe("#findKeyByValue", () => {
     drama:  "The Wire"
   };
 
-  it('should return key drama for value The Wire', () => {
+  it('Should return key drama for value The Wire', () => {
     const actual = findKeyByValue(bestTVShowsByGenre, "The Wire");
     const expected = "drama";
     assert.strictEqual(actual, expected);
   });
 
-  it('should return undefined for a value that does not exist', () => {
+  it('Should return undefined for a value that does not exist', () => {
     const actual = findKeyByValue(bestTVShowsByGenre, "That '70s Show");
     const expected = undefined;
     assert.strictEqual(actual, expected);
   });
 
-  it('should return undefined if no arguments are passed to function', () => {
+  it('Should return undefined if no arguments are passed to function', () => {
     const actual = findKeyByValue();
     const expected = undefined;
     assert.strictEqual(actual, expected);
