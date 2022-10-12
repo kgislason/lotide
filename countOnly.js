@@ -1,4 +1,17 @@
+/**
+ *
+ * countOnly.js
+ *
+ * Description: take in a collection of items array and return counts for a specific subset of those items.
+ *
+ * Limited to Strings.
+ */
 const countOnly = function(allItems, itemsToCount) {
+  if (!Array.isArray(allItems)) return;
+  if (Array.isArray(itemsToCount) || typeof itemsToCount !== 'object') {
+    return;
+  }
+
   let output = {};
 
   for (let key in itemsToCount) {
@@ -20,5 +33,7 @@ const countOnly = function(allItems, itemsToCount) {
   // return an object w/ counts of everything from input object foudn in allItems.
   return output;
 };
+
+console.log(countOnly([1, 2, 3], {1: true}));
 
 module.exports = countOnly;
