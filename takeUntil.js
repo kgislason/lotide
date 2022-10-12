@@ -1,10 +1,10 @@
 /**
  * Function: takeUntil()
  *
- * Returns a slice of the array with elements taken from the 
- * 
+ * Returns a slice of the array with elements taken from the
+ *
  * @param {array} source array
- * @param {callback} func 
+ * @param {callback} func
  */
 
 // take in two parameters:
