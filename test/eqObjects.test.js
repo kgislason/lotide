@@ -4,7 +4,7 @@ const eqObjects = require('../eqObjects');
 // Test Cases
 describe("#eqObjects", () => {
 
-  it('Should return true for euqal objects with only primitive data types, same keys where keys are in reverse order - { a: "1", b: "2" } === { b: "2", a: "1" }', () => {
+  it('Should return true for equal objects with only primitive data types, same keys where keys are in reverse order - { a: "1", b: "2" } === { b: "2", a: "1" }', () => {
     const actual = eqObjects({ a: "1", b: "2" }, { a: "1", b: "2" });
     const expected = true;
     assert.strictEqual(actual, expected);
