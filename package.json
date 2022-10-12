@@ -1,7 +1,7 @@
 {
   "name": "@kristygislason/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library.",
   "main": "assertArraysEqual.js",
   "scripts": {
     "test": "mocha"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/kgislason/lotide.git"
   },
-  "author": "",
+  "author": "Kristy Gislason <kristygislason@gmail.com> (https://github.com/kgislason/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kgislason/lotide/issues"
