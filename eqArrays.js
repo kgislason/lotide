@@ -1,7 +1,7 @@
 /**
  * eqArrays()
  *
- * Description: A function that takes in 2 arrays and returns true if the arrays are equal and false otherwise
+ * Description: takes in 2 arrays and returns true if the arrays are equal and false otherwise
  *
  * @since 1.0.0
  * @param {array} arrayOne first array to compare

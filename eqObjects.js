@@ -3,7 +3,7 @@ const eqArrays = require('./eqArrays');
 /**
  * eqObjects()
  *
- * Description: a function that takes in 2 objects and returns true if they are equal, false otherwise
+ * Description: takes in 2 objects and returns true if they are equal, false otherwise
  *
  * @since 1.0.0
  * @param {object} object1 first object to compare
