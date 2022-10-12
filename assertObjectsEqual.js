@@ -1,3 +1,13 @@
+/**
+ * eqObjects()
+ *
+ * Takes in 2 objects and returns true if they are equal, false otherwise
+ *
+ * @since 1.0.0
+ * @param {object} actual
+ * @param {object} expected
+ * @returns {boolean} true if equal, false otherwise
+ */
 const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function(actual, expected) {

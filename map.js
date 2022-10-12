@@ -1,12 +1,14 @@
 /**
  * map.js
  *
- * take in two arguments:
- * - An array to map
- * - A callback function
+ * Description: return a new array based on the results of the callback function.
  *
- * Description: The map function will return a new array based on the results of the callback function.
+ * @since 1.0.0
+ * @param {array} An array to map
+ * @param {callback} A callback function
+ * @returns {array} based on the results of the callback function.
  */
+
 const map = function(array, callback) {
   const result = [];
 

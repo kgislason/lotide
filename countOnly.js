@@ -4,7 +4,10 @@
  *
  * Description: take in a collection of items array and return counts for a specific subset of those items.
  *
- * Limited to Strings.
+ * @since 1.0.0
+ * @param {array} allItems array of items (Limited to Strings).
+ * @param {object} itemsToCount object of items to count as key and boolean as value
+ * @returns {object} Return an object containing counts of everything that the input object listed in `itemsToCount` if the value was true.
  */
 const countOnly = function(allItems, itemsToCount) {
   if (!Array.isArray(allItems)) return;

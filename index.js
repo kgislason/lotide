@@ -1,6 +1,9 @@
 /**
- *   index.js
+ * index.js
+ *
+ * Description: Export all functions to export object
  */
+
 const head   = require('./head');
 const tail   = require('./tail');
 const middle = require('./middle');

@@ -1,11 +1,13 @@
 /**
+ * head()
  *
- * Head - head()
+ * Description a function that takes an array and returns the first element in the array
  *
- * Taks an array and returns the first element in the array
- *
+ * @since 1.0.0
+ * @param {array} source array
+ * @returns {*} value of first element in array
  */
-// return the first element itself
+
 const head = function(array) {
   if (array !== null && array.length) {
     return array[0];

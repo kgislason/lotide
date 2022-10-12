@@ -2,6 +2,10 @@
  * middle.js
  *
  * Description: takes in an array and returns middle most element of the array.
+ *
+ * @since 1.0.0
+ * @param {array} soucre array
+ * @returns {array} Returns an array with the middle most element(s)
  */
 
 const middle = function(array) {

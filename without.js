@@ -1,7 +1,9 @@
 /**
  * without.js
  *
- * @category Function
+ * Description:  a function that takes in a source array and an itemsToRemove arrays and returns only the items from the source array that are not in the itemsToRemove array.
+ *
+ * @since 1.0.0
  * @param {array} source array
  * @param {array} itemsToRemove array
  * @returns {array} Returns array with only those elements from `source` array that are not present in the `itemsToRemove` array.
