@@ -1,8 +1,8 @@
 /**
- * 
+ *
  * Head - head()
- * 
- * Taks an array and returns the first element in the array 
+ *
+ * Taks an array and returns the first element in the array
  *
  */
 // return the first element itself

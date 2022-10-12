@@ -7,7 +7,7 @@
 const tail = function(array) {
   if (!Array.isArray(array)) {
     return;
-  } 
+  }
   
   if (array.length <= 1) {
     return [];

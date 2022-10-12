@@ -1,6 +1,6 @@
 /**
  * middle.js
- * 
+ *
  * Description: takes in an array and returns middle most element of the array.
  */
 
