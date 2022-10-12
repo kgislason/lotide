@@ -1,55 +1,60 @@
-const assertEqual = require('../assertEqual');
-const eqArrays = require('../eqArrays');
+const assert = require('chai').assert;
 const eqObjects = require('../eqObjects');
 
-// Tests with Primitive Data Types
-const ab = { a: "1", b: {} };
-const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
+// Test Cases
+describe("#eqObjects", () => {
 
-const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
+  it('should return true for euqal objects with only primitive data types, same keys where keys are in reverse order - { a: "1", b: "2" } === { b: "2", a: "1" }', () => {
+    const actual = eqObjects({ a: "1", b: "2" }, { a: "1", b: "2" });
+    const expected = true;
+    assert.strictEqual(actual, expected);
+  });
 
-const human = {
-  name: "Jane Smith",
-  age: 50,
-  city: "Victoria"
-};
+  it('should return false if there is one more key value pair in one of the objects { a: "1", b: "2" } === { a: "1", b: "2", c: "3" }', () => {
+    const actual = eqObjects({ a: "1", b: "2" }, { a: "1", b: "2", c: "3" });
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
 
-const animal = {
-  name: "Nibbles",
-  age: 2,
-  city: "Victoria"
-};
+  it('should return false for non equal objects where one value is an emoty object: { a: "1", b: "2" } !== { a: "1", b: {} }', () => {
+    const actual = eqObjects({ a: "1", b: "2" }, { a: "1", b: {} });
+    const expected = false;
+    assert.deepEqual(actual, expected);
+  });
 
-console.log(assertEqual(human["name"], animal["name"])); // => false
-console.log(eqObjects(human, animal)); // => false
+  it('should return false for non equal objects where one value is an array: { a: "1", b: "2" } !== { a: "1", b: {} }', () => {
+    const actual = eqObjects({ a: "1", b: [1, 2, []] }, { a: "1", b: [] });
+    const expected = false;
+    assert.deepEqual(actual, expected);
+  });
 
-const example1 = {
-  sample: "a",
-  test: true,
-  result: "pass",
-};
+  it('should return undefined if no arguements present', () => {
+    const actual = eqObjects();
+    const expected = undefined;
+    assert.deepEqual(actual, expected);
+  });
 
-const example2 = {
-  test: true,
-  result: "pass",
-  sample: "a",
-};
+  it('should return undefined if not an object', () => {
+    const actual = eqObjects(1, 2);
+    const expected = undefined;
+    assert.deepEqual(actual, expected);
+  });
 
-console.log(eqObjects(example1, example2)); // => true
+  it('should return undefined if is array instead of object', () => {
+    const actual = eqObjects([], []);
+    const expected = undefined;
+    assert.deepEqual(actual, expected);
+  });
 
-// Test Cases with Arrays
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-//console.log(eqObjects(cd, dc)); // => true
+  it('should return true for equal objects with nested objects', () => {
+    const actual = eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 });
+    const expected = true;
+    assert.strictEqual(actual, expected);
+  });
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(eqObjects(cd, cd2)); // => false
-console.log(eqArrays(cd["d"], cd2["d"])); // => false
-console.log(assertEqual(cd["d"][0], dc["d"][0]));
-console.log(assertEqual(cd["d"].length, cd2["d"].length));
-
-console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
-console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
+  it('should return false - { a: { z: 1 }, b: 2 } !== { a: { z: 1 }, b: { x: 2 } }', () => {
+    const actual = eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: { x: 2 } });
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
+});

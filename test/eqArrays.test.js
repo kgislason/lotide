@@ -1,25 +1,47 @@
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 const eqArrays = require('../eqArrays');
 
-// Test Cases
-console.log("if another type is entered that is not an array, should return undefined: ")
-console.log(eqArrays('test', 'test'));
-console.log("Should return true: ");
-console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
-console.log("Should return false, arrays are in reverse order: ");
-console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
+describe("#eqArrays", () => {
 
-console.log("Should return true - 2 arrays of strings that are the same: ");
-console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
-console.log("Should return false if a value is a string and the other is a number: ");
-console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
+  it('should return true for 2 equal arrays of numbers [1, 2, 3] === [1, 2, 3]', () => {
+    const actual = eqArrays([1, 2, 3], [1, 2, 3]);
+    const expected = true;
+    assert.strictEqual(actual, expected);
+  });
 
-// Use assertEqual to write test cases for various scenarios.
-assertArraysEqual([1, 2, 3], [1, 2, 3], true); // => should PASS
-assertArraysEqual([3, 2, 1], [1, 2, 3], false); // => should PASS
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"], true); // => should PASS
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3], false); // => should PASS
-assertArraysEqual([1, 2, 3], [1, 2], false); // => should PASS
-assertArraysEqual([1, 2, [3]], [1, [2], 3], false);
-assertArraysEqual([1, 2, 3, 4, [5, 6, [7]]], [1, 2, 3, 4, [5, 6, [7]]]); // => should pass
-assertArraysEqual([3, [4], [5, 6, [7]]], [[3, 4], 5, [6, [7]]]); // => should fail
+  it('should return undefined if another type is entered that is not an array', () => {
+    const actual = eqArrays(1, 1);
+    const expected = undefined;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('Should return false for arrays of equal length, but are in reverse order: [1, 2, 3] !== [3, 2, 1]', () => {
+    const actual = eqArrays([1, 2, 3], [3, 2, 1]);
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('Should return true for array of strings that are identical', () => {
+    const actual = eqArrays(["1", "2", "3"], ["1", "2", "3"]);
+    const expected = true;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('Should return false if arrays are close to equal, but one value is of different type 3 !== "3"', () => {
+    const actual = eqArrays(["1", "2", "3"], ["1", "2", 3]);
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('Should return false for nested arrays that are not equal', () => {
+    const actual = eqArrays([3, [4], [5, 6, [7]]], [[3, 4], 5, [6, [7]]]);
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('Should return true for nested arrays that are equal', () => {
+    const actual = eqArrays([3, [4], [5, 6, [7]]], [3, [4], [5, 6, [7]]]);
+    const expected = true;
+    assert.strictEqual(actual, expected);
+  });
+});
