@@ -1,7 +1,7 @@
 /**
  * tail()
  *
- * Description: every element except the head (first element) of the array.
+ * Description: takes an array and returns array with every element except the head (first element) of the array.
  *
  * @since 1.0.0
  * @param {array} source array

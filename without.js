@@ -1,7 +1,7 @@
 /**
  * without.js
  *
- * Description:  a function that takes in a source array and an itemsToRemove arrays and returns only the items from the source array that are not in the itemsToRemove array.
+ * Description:  takes in a source array and an itemsToRemove arrays and returns only the items from the source array that are not in the itemsToRemove array.
  *
  * @since 1.0.0
  * @param {array} source array

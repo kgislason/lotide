@@ -1,7 +1,7 @@
 /**
  * Function: takeUntil()
  *
- * Description: a function that takes in an array and callback and returns a slice of the array based on the criteria specified in the callback.
+ * Description: takes in an array and callback and returns a slice of the array based on the criteria specified in the callback.
  *
  * @since 1.0.0
  * @param {array} source array
