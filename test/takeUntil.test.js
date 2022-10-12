@@ -5,7 +5,7 @@ describe("#takeUntil", () => {
   const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
   const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 
-  it('Should return []', () => {
+  it('Should return [ 1, 2, 5, 7, 2 ] - all numbers greater than 0 as array', () => {
     const actual = takeUntil(data1, x => x < 0);
     const expected = [ 1, 2, 5, 7, 2 ];
     assert.deepEqual(actual, expected);
