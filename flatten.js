@@ -1,6 +1,7 @@
 /**
  * flatten()
- * take an array containing elements including nested arrays and returns a flattened version of the array
+ * 
+ * Description: take an array containing elements including nested arrays and returns a flattened version of the array
  *
  * @since 1.0.0
  * @param {array} array with nested arrays [1, 2, [1, 2, [3, [4]]]]

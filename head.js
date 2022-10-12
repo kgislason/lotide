@@ -1,7 +1,7 @@
 /**
  * head()
  *
- * Description a function that takes an array and returns the first element in the array
+ * Description: takes an array and returns the first element in the array
  *
  * @since 1.0.0
  * @param {array} source array
