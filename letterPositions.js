@@ -5,6 +5,9 @@
  * @returns all indices of letter positions in the sentence as an object
  */
 const letterPositions = function(sentence) {
+  if (!sentence) return;
+  if (typeof sentence !== "string") return;
+
   const results = {};
   const sentenceArray = sentence.split('');
 
